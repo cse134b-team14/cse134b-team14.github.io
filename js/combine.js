@@ -206,6 +206,41 @@ var knownItems = [
         1
     ]
 },
+
+    /* Gold Bars */
+{
+    item: ItemType.BAR,
+    metal: MetalType.GOLD,
+    name: "PAMP Suisse Fortuna Veriscan Gold Bar",
+    fineness: 0.999,
+    denominations: [
+        1
+    ]
+    // SRC: http://www.jmbullion.com/1-oz-pamp-suisse-veriscan-gold-bar/
+},
+
+{
+    item: ItemType.BAR,
+    metal: MetalType.GOLD,
+    name: "Sunshine Gold Bar",
+    fineness: 0.999,
+    denominations: [
+        1
+    ]
+    // SRC: http://www.jmbullion.com/1-gram-sunshine-gold-bar/
+},
+
+{
+    item: ItemType.BAR,
+    metal: MetalType.GOLD,
+    name: "Valcambi Gold CombiBar",
+    fineness: 0.999,
+    denominations: [
+        1
+    ]
+    //SRC: http://www.jmbullion.com/1-oz-valcambi-gold-combibar/
+},
+
     /* Silver Coins */
 {
     item: ItemType.COIN,
@@ -232,6 +267,30 @@ var knownItems = [
     fineness: 0.999,
     denominations: [ 1 ]
 },
+
+    /* Silver Bars */
+{
+    item: ItemType.BAR,
+    metal: MetalType.SILVER,
+    name: "Sunshine Silver Bar",
+    fineness: 0.999,
+    denominations: [
+        1
+    ]
+    //SRC: http://www.jmbullion.com/1-oz-sunshine-silver-bar/
+},
+
+{
+    item: ItemType.BAR,
+    metal: MetalType.SILVER,
+    name: "SilverTowne Prospector Silver Bar",
+    fineness: 0.999,
+    denominations: [
+        1
+    ]
+    //SRC: http://www.jmbullion.com/1-oz-silvertowne-silver-bar/
+},
+
     /* Platinum Coins */
 {
     item: ItemType.COIN,
@@ -257,7 +316,20 @@ var knownItems = [
         1/2,
         1
     ]
+},
+
+    /* Platinum Bars */
+{
+    item: ItemType.BAR,
+    metal: MetalType.PLATINUM,
+    name: "Valcambi Platinum Bar",
+    fineness: 0.9995,
+    denominations: [
+        1
+    ]
+    //SRC: http://www.jmbullion.com/1-oz-valcambi-platinum-bar/
 }
+
 ];
 
 /* Filters list of known items */
