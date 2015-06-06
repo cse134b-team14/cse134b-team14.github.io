@@ -1129,6 +1129,7 @@ select {
 
 #save:hover {
     border: 2px solid #68CEDE;
+    cursor: pointer;
 }
 
 #delete {
@@ -1141,6 +1142,7 @@ select {
 
 #delete:hover {
     border: 2px solid #E69382;
+    cursor: pointer;
     /*background: ;*/
 }
 
@@ -1162,6 +1164,7 @@ select {
 
 #cancel:hover {
     border: 2px solid #68CEDE;
+    cursor: pointer;
 }
 /* * * * * * * * * * * * * * * *
  *                             *
