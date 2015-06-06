@@ -35,4 +35,8 @@ gulp.task("default", function() {
         .pipe(gulp.dest(target + "js/"));
     gulp.src("style/*.css")
         .pipe(gulp.dest(target + "style/"));
+    gulp.src("assets/*")
+        .pipe(gulp.dest(target + "assets/"));
+    gulp.src("fonts/*")
+        .pipe(gulp.dest(target + "fonts/"));
 });
