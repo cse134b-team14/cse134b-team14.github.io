@@ -12,6 +12,8 @@ var js = [
 ];
 var combined = [
     "js/jquery-1.11.2.min.js", 
+    "js/parse-1.4.2.min.js",
+    "js/.11.2.min.js", 
     "js/Chart.js", 
     "js/velocity.min.js", 
     "js/parse.js", 
