@@ -34,7 +34,7 @@ var knownItems = [
 {
     item: ItemType.COIN,
     metal: MetalType.GOLD,
-    name: "CHN Gold Panda",LOL
+    name: "CHN Gold Panda",
     fineness: 0.999, 
     denominations: [
         1/20,
