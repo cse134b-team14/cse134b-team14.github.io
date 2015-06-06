@@ -88,6 +88,9 @@ function loadData() {
                     var totalValue = goldTotal * goldBid + silverTotal * silverBid + platTotal * platBid;
                     var totalChange = (goldTotal * goldBid * goldChange + silverTotal * silverBid * silverChange + platTotal * platBid * platChange) / 100;
                     var totalPercentChange = totalChange / totalValue * 100;
+                    if (isNaN(totalPercentChange)) {
+                        totalPercentChange = 0;
+                    }
                     $(".total-dollars").text(numberPricify(totalValue));
                     mTotalChange = $(".total-change");
                     mTotalChange.text(numberNicify(totalPercentChange) + "%");
@@ -95,8 +98,8 @@ function loadData() {
                         mTotalChange.removeClass("neg-change");
                         mTotalChange.addClass("pos-change");
                     } else {
-                        mTotalChange.removeClass("neg-change");
-                        mTotalChange.addClass("pos-change");
+                        mTotalChange.addClass("neg-change");
+                        mTotalChange.removeClass("pos-change");
                     }
                     /* Trigger graph load */
                     loadGraph();

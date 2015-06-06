@@ -129,7 +129,7 @@ function updateLoaded() {
         showPopup();
         readAllItems(currentPage, currentFilter, 
                 function (items) {
-                    if (items.length <= 0) {
+                    if (items.length <= 0 && currentPage > 0) {
                         ajaxMutex = false;
                         prevPage();
                     } else {
@@ -441,7 +441,6 @@ function initTable() {
     searchbar.keypress(function (e) {
         var kcode = e.keyCode ? e.keyCode : e.which;
         if (kcode == 13) {
-
             updateLoaded();
         }
     });
