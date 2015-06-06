@@ -26,6 +26,12 @@ var combined = [
 
 gulp.task("default", function() {
     gulp.src(combined)
+        .pipe(concat("combine.js"))
+        .pipe(gulp.dest("js/"));
+});
+
+gulp.task("prod", function() {
+    gulp.src(combined)
         .pipe(uglify())
         .pipe(concat("combine.js"))
         .pipe(gulp.dest(target + "js/"));

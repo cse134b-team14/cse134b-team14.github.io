@@ -19,10 +19,7 @@ var coinChart;
 /* Loaders */
 function loadData() {
     /* Create loading popup */
-    setPopupSize(400);
-    setPopupHeader("Loading your data!");
-    setPopupMain("");
-    showPopup();
+    displayMessage("Loading your data!");
 
     /* Graph Builder */
     function buildGraph() {
@@ -206,13 +203,7 @@ function loadData() {
             }, 
             function (item, error) {
                 /* Handle error with popup */
-                setPopupHeader("Error!");
-                setPopupMain(
-                        "<div class='popup-container'>" +
-                        "<p>Failed to load data.</p>" + 
-                        "<p>Got Error: " + error.message + "</p>" + 
-                        "</div>" +
-                        "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+                displayError(error.message);
             });
 }
 
@@ -224,6 +215,7 @@ function loadGraph() {
         scaleGridLineWidth : 1,
         scaleShowHorizontalLines: true,
         scaleShowVerticalLines: true,
+        scaleShowLabels: false,
         bezierCurve : true,
         bezierCurveTension : 0.4,
         pointDot : true,
@@ -326,14 +318,7 @@ $(document).ready(function() {
     
     /* Not logged in */
     if (!Parse.User.current()) {
-        setPopupHeader("Error!");
-        setPopupMain(
-                "<div class='popup-container'>" +
-                "<p>Must be logged into access page.</p>" + 
-                "</div>" +
-                "<input type='button' class='popup-main-button' onclick='logout();' value='Continue'/>");
-        setPopupSize(300);
-        showPopup();
+        displayMessage("Invalid Access!", "", true, "logout();");
         return;
     }
 

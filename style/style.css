@@ -99,6 +99,11 @@ body {
     color: #E6E6E6;
 }
 
+h1,h2,h3,h4,h5,h6,nav {
+    font-family: 'robotolight', Arial, sans-serif;
+    font-weight: 600;
+}
+
 .main-section {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -442,6 +447,8 @@ a:visited {
 #login-button,
 #login-button-facebook
 {
+  color: #E6E6E6;
+  text-decoration: none;
   box-sizing: border-box;
   display: block;
 }
@@ -1204,6 +1211,8 @@ select {
 }
 
 .popup-main-button {
+  color: #E6E6E6;
+  text-decoration: none;
   border-radius: 0;
   font-size: 16px;
   width: 100%;
