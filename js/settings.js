@@ -93,7 +93,7 @@ function showUserSettings() {
     setPopupMain(
             "<div class='popup-container'><table>" +
             "<tr><td><strong>Background Color</strong></td></tr>" + 
-            "<tr><td><input type='text' id='ui-color' placeholder='#RRGGBB' value='" + color + "'/></td></tr>" + 
+            "<tr><td><input type='text' class='color' id='ui-color' placeholder='#RRGGBB' value='" + color + "'/></td></tr>" + 
             "</table></div>" +
             "<input type='button' class='popup-main-button' onclick='updateUserSettings();' value='Submit'/>" +
             "<input type='button' class='popup-main-button' onclick='showSettings();' value='Cancel'/>"
@@ -101,6 +101,7 @@ function showUserSettings() {
     setPopupHeader("User Settings");
     setPopupSize(300);
     showPopup();
+    new jscolor.color($("#ui-color").get(0), {});
 }
 
 function updateUserSettings() {
