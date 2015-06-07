@@ -66,3 +66,7 @@ If we were to continue this project, there would be a few other things that we w
 * settings.js:          Provides functionality to the settings menu
 * signup.js:            Code to present the popup signup menu
 * view.js:              Code that is specific to view pages
+
+###Project Diagram:
+![Picture](https://github.com/cse134b-team14/cse134b-team14.github.io/Chart.jpg)
+
