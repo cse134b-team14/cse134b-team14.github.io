@@ -32,12 +32,28 @@ function cancel() {
     }
 }
 
+/* Resets all red error indicators */
+function resetErrorIndicators() {
+    $("#medium-type").css("border", "none");
+    $("#metal-type").css("border", "none");
+    $("#type-name").css("border", "none");
+    $("#purchase-date").css("border", "none"); 
+    $("#qty").css("border", "none");
+    $("#unit-price").css("border", "none");
+    $("#fineness").css("border", "none");
+    $("#wpu").css("border", "none");
+
+}
+
 function submitItem() {
     var currentUser = Parse.User.current();
     if (!currentUser) {
         alert("Must be logged in!");
         return;
     }
+
+    resetErrorIndicators();
+
     var fitype = parseInt(mediumType.val());
     var fmtype = parseInt(metalType.val());
     var fname = typeName.val();
@@ -52,6 +68,7 @@ function submitItem() {
         fpicture = new Parse.File(file.name, file);
     }
     if (isNaN(fitype)) {
+        $("#medium-Type").css("border", "1px solid red");
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
@@ -63,6 +80,7 @@ function submitItem() {
         return;
     }
     if (isNaN(fmtype)) {
+        $("#metal-type").css("border", "1px solid red");
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
@@ -70,10 +88,11 @@ function submitItem() {
                 "<p> Invalid Metal Type</p>" + 
                 "</div>" +
                 "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
-        showPopup();
+        showPopup(); 
         return;
     }
     if (!fname) {
+        $("#type-name").css("border", "1px solid red");
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
@@ -81,21 +100,24 @@ function submitItem() {
                 "<p> Invalid Name</p>" + 
                 "</div>" +
                 "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
-        showPopup();
+        showPopup();   
         return;
     }
     if (isNaN(fpurchaseDate)) {
+        $("#purchase-date").css("border", "1px solid red");   
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
                 "<p>Failed to modify item.</p>" + 
-                "<p> Invalid Purchase Date</p>" + 
+                "<p> Invalid Purchase Date</p>" +
+                "<p> Use MM/DD/YYYY format </p>" +
                 "</div>" +
                 "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
         showPopup();
         return;
     }
-    if (isNaN(fqty)) {
+    if (isNaN(fqty) || fqty < 0) {
+        $("#qty").css("border", "1px solid red"); 
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
@@ -103,10 +125,12 @@ function submitItem() {
                 "<p> Invalid Quantity</p>" + 
                 "</div>" +
                 "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
-        showPopup();
+        showPopup();  
         return;
     }
-    if (isNaN(funitPrice)) {
+
+    if (isNaN(funitPrice) || funitPrice < 0) {
+        $("#unit-price").css("border", "1px solid red");  
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
@@ -117,7 +141,8 @@ function submitItem() {
         showPopup();
         return;
     }
-    if (isNaN(ffineness)) {
+    if (isNaN(ffineness) || ffineness < 0) {
+        $("#fineness").css("border", "1px solid red");  
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
@@ -128,7 +153,8 @@ function submitItem() {
         showPopup();
         return;
     }
-    if (isNaN(fwpu)) {
+    if (isNaN(fwpu) || fwpu < 0) {
+        $("#wpu").css("border", "1px solid red"); 
         setPopupHeader("Error!");
         setPopupMain(
                 "<div class='popup-container'>" +
