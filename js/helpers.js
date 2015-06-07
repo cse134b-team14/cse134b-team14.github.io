@@ -120,3 +120,12 @@ function setPageInHash(page) {
     }
     window.location.hash = newHash;
 }
+
+/* Not really a force, but you know... */
+function forceLogin() {
+    if (!Parse.User.current()) {
+        displayMessage("Invalid Access!", "", true, "logout();");
+        return false;
+    }
+    return true;
+}

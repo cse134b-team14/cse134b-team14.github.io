@@ -82,12 +82,7 @@ function removeItem(i) {
                     function (item, error) {
                         ajaxMutex = false;
                         /* Error removal */
-                        setPopupMain(
-                                "<div class='popup-container'>" +
-                                "<p>Failed to remove item.</p>" + 
-                                "<p>Got Error: " + error.message + "</p>" + 
-                                "</div>" +
-                                "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+                        displayError(error.message);
                     });
         }
     }
@@ -134,7 +129,7 @@ function updateLoaded() {
         showPopup();
         readAllItems(currentPage, currentFilter, 
                 function (items) {
-                    if (items.length <= 0) {
+                    if (items.length <= 0 && currentPage > 0) {
                         ajaxMutex = false;
                         prevPage();
                     } else {
@@ -149,12 +144,7 @@ function updateLoaded() {
                 function (items, error) {
                     ajaxMutex = false;
                     /* Error on update */
-                    setPopupMain(
-                            "<div class='popup-container'>" +
-                            "<p>Failed to update table.</p>" + 
-                            "<p>Got Error: " + error.message + "</p>" + 
-                            "</div>" +
-                            "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+                    displayError(error.message);
                 });
     }
 }
@@ -334,13 +324,7 @@ function loadData() {
                 buildGraph();
             }, 
             function (item, error) {
-                setPopupHeader("Error!");
-                setPopupMain(
-                        "<div class='popup-container'>" +
-                        "<p>Failed to load data.</p>" + 
-                        "<p>Got Error: " + error.message + "</p>" + 
-                        "</div>" +
-                        "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+                displayError(error.message);
                 goldDone = true;
                 silverDone = true;
                 platDone = true;
@@ -353,6 +337,7 @@ function loadGraph() {
         scaleShowGridLines : true,
         scaleGridLineColor : "rgba(104, 206, 222, 0.1)",
         scaleGridLineWidth : 1,
+        scaleShowLabels: false,
         scaleShowHorizontalLines: true,
         scaleShowVerticalLines: true,
         bezierCurve : true,
@@ -456,7 +441,6 @@ function initTable() {
     searchbar.keypress(function (e) {
         var kcode = e.keyCode ? e.keyCode : e.which;
         if (kcode == 13) {
-
             updateLoaded();
         }
     });
@@ -465,14 +449,7 @@ function initTable() {
 $(document).ready(function() {
     initPopup();
     if (!Parse.User.current()) {
-        setPopupHeader("Error!");
-        setPopupMain(
-                "<div class='popup-container'>" +
-                "<p>Must be logged into access page.</p>" + 
-                "</div>" +
-                "<input type='button' class='popup-main-button' onclick='logout();' value='Continue'/>");
-        setPopupSize(300);
-        showPopup();
+        displayMessage("Invalid Access!", "", true, "logout();");
         return;
     }
     currentPage = pageInHash();
