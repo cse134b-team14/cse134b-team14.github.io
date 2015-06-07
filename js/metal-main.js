@@ -147,6 +147,7 @@ function updateLoaded() {
                     displayError(error.message);
                 });
     }
+    loadData();
 }
 
 /* Loaders */
