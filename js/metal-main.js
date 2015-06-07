@@ -532,6 +532,7 @@ $(document).ready(function() {
 
     $(window).resize(resizer);
     loadData();
+    applySettings();
 });
 
 /* Force reload on tab change */

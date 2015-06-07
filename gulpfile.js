@@ -1,5 +1,6 @@
 var gulp = require("gulp");
 var uglify = require("gulp-uglify");
+var minify = require("gulp-minify-css");
 var concat = require("gulp-concat");
 
 var target  = "prod/";
@@ -9,7 +10,7 @@ var js = [
     "js/edit.js",
     "js/metal-main.js",
     "js/view.js",
-    "js/signup.js",
+    "js/signup.js"
 ];
 var combined = [
     "js/jquery-1.11.2.min.js", 
@@ -42,6 +43,7 @@ gulp.task("prod", function() {
     gulp.src(js)
         .pipe(gulp.dest(target + "js/"));
     gulp.src("style/*.css")
+        .pipe(minify())
         .pipe(gulp.dest(target + "style/"));
     gulp.src("assets/*")
         .pipe(gulp.dest(target + "assets/"));

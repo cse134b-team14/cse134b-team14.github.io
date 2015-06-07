@@ -1,23 +1,21 @@
 function signupUser() {
 
     var user = new Parse.User();
-    var username = $("#username").val();
-    var password = $("#passwd").val();
-    var confirmPasswd = $('#confirmPasswd').val();
+    var username = $("#signup-username").val();
+    var password = $("#signup-passwd").val();
+    var confirmPasswd = $('#signup-confirm-passwd').val();
 
-    var email = $('#email').val();
-    var confirmEmail = $('#confirmEmail').val();
+    var email = $('#signup-email').val();
+    var confirmEmail = $('#signup-confirm-email').val();
 
     if(validateForm(username, password, confirmPasswd, email, confirmEmail)){
         user.set("username", username);
         user.set("password", password);
-        user.set("email", email)
-        setPopupHeader("Signing You Up!");
-        setPopupMain("");
-        setPopupSize(400);
-        showPopup();
+        user.set("email", email);
+        displayMessage("Signing you up...");
         user.signUp(null, {
             success: function(user) {
+                displayMessage("Success!", "You have been signed up!", true);
             },
             error: function(user, error) {
                 displayError(error.message);

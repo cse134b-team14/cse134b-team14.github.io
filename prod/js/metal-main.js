@@ -448,10 +448,7 @@ function initTable() {
 
 $(document).ready(function() {
     initPopup();
-    if (!Parse.User.current()) {
-        displayMessage("Invalid Access!", "", true, "logout();");
-        return;
-    }
+    if (!forceLogin()) return;
     currentPage = pageInHash();
     searchbar = $("#searchbar");
     metalType = metalInHash();
@@ -488,13 +485,7 @@ $(document).ready(function() {
         location.reload();	
     });
     $('.icon-cog').click(function(){
-        setPopupHeader("Settings");
-        setPopupMain(
-                "<input type='button' class='popup-main-button' onclick='logout();' value='Logout'/>" +
-                "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Cancel'/>" 
-                );
-        setPopupSize(400);
-        showPopup();
+        showSettings();
     });
     $('tr').click(function(){
         $(this).find('a')[0].click();

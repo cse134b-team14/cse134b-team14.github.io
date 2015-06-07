@@ -23,13 +23,17 @@ function initPopup() {
 }
 
 function showPopup() {
-  if (!popupShown) {
-      popupShown = true;
-      popupBackdrop.css("visibility", "visible");
-      popupBackdrop.animate({
-          opacity: 1.0
-      }, 300);
-  }
+    var twidth = popupBody.width();
+    var theight = popupBody.height();
+    popupBody.css("margin-top", parseInt(-theight / 2) + "px");
+    popupBody.css("margin-left", parseInt(-twidth / 2) + "px");
+    if (!popupShown) {
+        popupShown = true;
+        popupBackdrop.css("visibility", "visible");
+        popupBackdrop.animate({
+            opacity: 1.0
+        }, 300);
+    }
 }
 
 function hidePopup() {
@@ -46,10 +50,6 @@ function hidePopup() {
 
 function setPopupSize(width) {
     popupBody.css("width", width + "px");
-    var twidth = popupBody.width();
-    var theight = popupBody.width();
-    popupBody.css("margin-top", parseInt(-twidth / 2) + "px");
-    popupBody.css("margin-left", parseInt(-theight / 2) + "px");
 }
 
 function setPopupHeader(text) {

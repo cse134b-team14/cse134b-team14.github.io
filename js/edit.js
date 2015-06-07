@@ -399,13 +399,7 @@ $(document).ready(function() {
                     function (item, error) {
                         alert(error.message);
                         ajaxMutex = false;
-                        setPopupHeader("Error!");
-                        setPopupMain(
-                                "<div class='popup-container'>" +
-                                "<p>Failed to load data.</p>" + 
-                                "<p>Got Error: " + error.message + "</p>" + 
-                                "</div>" +
-                                "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+                        displayError(error.message);
                     });
         } else {
             var theDate = new Date();
@@ -420,9 +414,7 @@ $(document).ready(function() {
             hidePopup();
         }
     }
-    setPopupSize(400);
-    setPopupHeader("Loading your data!");
-    setPopupMain("");
+    displayMessage("Loading your data!");
     showPopup();
     getSpotData(function (json) {
         goldAsk = json[0].ask;
@@ -437,4 +429,5 @@ $(document).ready(function() {
         spotDone = true;
         buildView();
     });
+    applySettings();
 });

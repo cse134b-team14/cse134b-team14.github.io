@@ -378,4 +378,5 @@ $(document).ready(function() {
 
     /* Trigger data load */
     loadData();
+    applySettings();
 });
