@@ -68,5 +68,5 @@ If we were to continue this project, there would be a few other things that we w
 * view.js:              Code that is specific to view pages
 
 ###Project Diagram:
-![Picture](https://github.com/cse134b-team14/cse134b-team14.github.io/Chart.jpg)
+![Picture](https://github.com/cse134b-team14/cse134b-team14.github.io/blob/master/Chart.jpg)
 
