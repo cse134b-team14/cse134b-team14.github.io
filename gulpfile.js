@@ -25,6 +25,7 @@ var combined = [
     "js/helpers.js", 
     "js/popup.js",
     "js/settings.js",
+    "js/jscolor.js"
 ];
 
 gulp.task("default", function() {
