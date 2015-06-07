@@ -80,4 +80,7 @@ function displayError(error, script) {
            "<p>It seems a \"" + error + "\" error has occured.</p>" +
            "<p>Please try again or <a href=''>let us know</a>.</p>", 
            true, script);
+    if (typeof trackJs !== 'undefined') {
+        trackJs.track(error);
+    }
 }
