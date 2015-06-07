@@ -95,6 +95,12 @@ function showUserSettings() {
             "<tr><td><strong>Background Color</strong></td></tr>" + 
             "<tr><td><input type='text' id='ui-color' placeholder='#RRGGBB' value='" + color + "'/></td></tr>" + 
             "</table></div>" +
+            "<tr><td><strong>Background Color</strong></td></tr>" + 
+             "<p> blag lafawdawda </p>" +
+            //"<center><a href="" onmouseover=" + color +"='black'>Black</a>" + 
+            //"<a href="" onclick=" + color + "='red'>Red</a>" +
+            //"<a href="" onclick=" + color + "='blue'>Blue</a>" +
+            //"<a href="" onclick=" + color + "='yellow'>Yellow</a></center>" +
             "<input type='button' class='popup-main-button' onclick='updateUserSettings();' value='Submit'/>" +
             "<input type='button' class='popup-main-button' onclick='showSettings();' value='Cancel'/>"
             );
