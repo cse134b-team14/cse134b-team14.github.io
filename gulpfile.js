@@ -9,6 +9,7 @@ var js = [
     "js/edit.js",
     "js/metal-main.js",
     "js/view.js",
+    "js/signup.js",
 ];
 var combined = [
     "js/jquery-1.11.2.min.js", 
