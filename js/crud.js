@@ -1,5 +1,5 @@
 /* Globals */
-var g2ozt = 0.032151;
+var g2ozt = 0.032151; // used to convert into troy ounces
 
 /* Pseudo-Enums */
 var ItemType  = Object.freeze({
