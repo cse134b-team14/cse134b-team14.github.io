@@ -101,27 +101,14 @@ $(document).ready(function() {
                         hidePopup();
                     },
                     function (item, error) {
-                        setPopupMain(
-                                "<div class='popup-container'>" +
-                                "<p>Failed to load data.</p>" + 
-                                "<p>Got Error: " + error.message + "</p>" + 
-                                "</div>" +
-                                "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+                        displayError(error.message);
                     });
         } else {
-            setPopupMain(
-                    "<div class='popup-container'>" +
-                    "<p>Failed to load data.</p>" + 
-                    "<p>Got Error: invalid object id</p>" + 
-                    "</div>" +
-                    "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Dismiss'/>");
+            displayError("invalid object ID");
         }
     }
     $(".command-header").text("View Item");
-    setPopupSize(400);
-    setPopupHeader("Loading your data!");
-    setPopupMain("");
-    showPopup();
+    displayMessage("Loading your data!");
     getSpotData(function (json) {
         goldAsk = json[0].ask;
         goldBid = json[0].bid;
@@ -135,4 +122,5 @@ $(document).ready(function() {
         spotDone = true;
         buildView();
     });
+    applySettings();
 });

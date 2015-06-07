@@ -1,5 +1,5 @@
 function signupUser() {
-
+    mixpanel.track("signUp");
     var user = new Parse.User();
     var username = $("#signup-username").val();
     var password = $("#signup-passwd").val();
@@ -15,6 +15,8 @@ function signupUser() {
         displayMessage("Signing you up...");
         user.signUp(null, {
             success: function(user) {
+                displayMessage("Success!", "You have been signed up!", true);
+                mixpanel.track("SuccessfulSignIn");
             },
             error: function(user, error) {
                 displayError(error.message);
@@ -57,6 +59,7 @@ function loginUser() {
     displayMessage("Logging You In!");
     Parse.User.logIn(username, password, {
         success: function (user) {
+            mixpanel.track("Login");
             window.location.href = "main.html";
         },
         error: function (user, error) {
