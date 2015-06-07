@@ -8,6 +8,8 @@
 * Scott Upton
  
 ###Project Overview:
+![Picture](https://github.com/cse134b-team14/cse134b-team14.github.io/blob/master/Bulliown.jpg)
+
 Bullion owning is a hobby, a monetary venture, and, for some folks, a way of life. It makes sense to have an arsenal of responsible and quality made applications to help provide novice and semi-pro bullion (gold, silver, and platinum) investors with asymmetrical information on pricing, premiums, and resale possibilities. Unfortunately, the existing applications currently in the market fail to cater specifically to the needs of the diverse community of bullion investors. Bulliown hopes to address this challenge by providing an improved idea of allowing users to track their assets while comparing them to bullion spot prices. This application provides a quick and easy way for a user to purchase bullion. By logging in through Facebook or creating an account a user can access the history of bullion that they purchased as well as more. We have a sleek and simple user interface that is easy to navigate and to pick up. This appeals to the target users of the application.
  
 #Using Bulliown
