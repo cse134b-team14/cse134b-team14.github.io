@@ -638,6 +638,15 @@ function setPageInHash(page) {
     window.location.hash = newHash;
 }
 
+/* Not really a force, but you know... */
+function forceLogin() {
+    if (!Parse.User.current()) {
+        displayMessage("Invalid Access!", "", true, "logout();");
+        return false;
+    }
+    return true;
+}
+
 /* Globals */
 var popupBody;
 var popupBackdrop;
@@ -721,3 +730,17 @@ function displayError(error, script) {
            "<p>Please try again or <a href=''>let us know</a>.</p>", 
            true, script);
 }
+
+function showSettings() {
+    setPopupHeader("Settings");
+    setPopupMain(
+            "<input type='button' class='popup-main-button' onclick='logout();' value='User Settings'/>" +
+            "<input type='button' class='popup-main-button' onclick='logout();' value='Change Email'/>" +
+            "<input type='button' class='popup-main-button' onclick='logout();' value='Logout'/>" +
+            "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Cancel'/>" 
+            );
+    setPopupSize(400);
+    showPopup();
+}
+
+

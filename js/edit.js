@@ -342,17 +342,7 @@ function loadHandlers() {
 /* Initializers */
 $(document).ready(function() {
     initPopup();
-    if (!Parse.User.current()) {
-        setPopupHeader("Error!");
-        setPopupMain(
-                "<div class='popup-container'>" +
-                "<p>Must be logged into access page.</p>" + 
-                "</div>" +
-                "<input type='button' class='popup-main-button' onclick='logout();' value='Continue'/>");
-        setPopupSize(300);
-        showPopup();
-        return;
-    }
+    if (!forceLogin()) return;
     mediumType = $("#medium-type");
     metalType = $("#metal-type");
     typeName = $("#type-name");

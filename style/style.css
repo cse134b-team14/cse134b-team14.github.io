@@ -18,61 +18,6 @@
     src: url("../fonts/RobotoCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "openlight";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "openregular";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "opensemi";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "raleway_r";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Raleway-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Raleway-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "raleway_m";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Raleway-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Raleway-Medium.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "monster_h";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/montserrat-hairline-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-hairline-webfont.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "monster_l";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/montserrat-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-light-webfont.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "monster_r";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-regular-webfont.ttf") format("truetype");
-}
 /* SASS VARIABLES */
 /* * * * * * * * * * * * * * * *
  *                             *
@@ -171,7 +116,6 @@ nav .icon-cog {
 }
 
 nav a {
-    text-decoration: none;
     color: #E6E6E6;
 }
 
