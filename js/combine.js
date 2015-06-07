@@ -822,6 +822,12 @@ function showUserSettings() {
             "<tr><td><strong>Background Color</strong></td></tr>" + 
             "<tr><td><input type='text' class='color' id='ui-color' placeholder='#RRGGBB' value='" + color + "'/></td></tr>" + 
             "</table></div>" +
+            "<tr><td><strong>Background Color</strong></td></tr>" + 
+             "<p> blag lafawdawda </p>" +
+            //"<center><a href="" onmouseover=" + color +"='black'>Black</a>" + 
+            //"<a href="" onclick=" + color + "='red'>Red</a>" +
+            //"<a href="" onclick=" + color + "='blue'>Blue</a>" +
+            //"<a href="" onclick=" + color + "='yellow'>Yellow</a></center>" +
             "<input type='button' class='popup-main-button' onclick='updateUserSettings();' value='Submit'/>" +
             "<input type='button' class='popup-main-button' onclick='showSettings();' value='Cancel'/>"
             );
@@ -849,10 +855,10 @@ function updateUserSettings() {
 function applySettings() {
     var color = Parse.User.current().get("backColor");
     if (color) {
-        $("body").css("background", color);
+        color = "#" + color;
+        $("body").css("background-color", color);
     }
-}
-/**
+}/**
  * jscolor, JavaScript Color Picker
  *
  * @version 1.4.4

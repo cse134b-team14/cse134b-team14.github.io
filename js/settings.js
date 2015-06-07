@@ -96,7 +96,7 @@ function showUserSettings() {
             "<tr><td><input type='text' class='color' id='ui-color' placeholder='#RRGGBB' value='" + color + "'/></td></tr>" + 
             "</table></div>" +
             "<tr><td><strong>Background Color</strong></td></tr>" + 
-             "<p> blag lafawdawda </p>" +
+            // "<p> blag lafawdawda </p>" +
             //"<center><a href="" onmouseover=" + color +"='black'>Black</a>" + 
             //"<a href="" onclick=" + color + "='red'>Red</a>" +
             //"<a href="" onclick=" + color + "='blue'>Blue</a>" +
@@ -128,6 +128,7 @@ function updateUserSettings() {
 function applySettings() {
     var color = Parse.User.current().get("backColor");
     if (color) {
-        $("body").css("background", color);
+        color = "#" + color;
+        $("body").css("background-color", color);
     }
 }
