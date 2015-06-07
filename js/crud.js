@@ -267,12 +267,16 @@ function readAllItems(
 
 /* TODO: Definite room for optimization */
 function getTotalMetals(onsuccess, onerror) {
+    //Find list in parse
     var query = new Parse.Query(Parse.Object.extend("Item"));
+    //Search filter
     query.equalTo("createdBy", Parse.User.current());
+    //Start the search, on success parse returns object called items
     query.find({
         success: function(items) {
             var totals = [0, 0, 0];
             var i;
+            //the mType is 0, 1, or 2. We use this to increment totals for the metals appropriately as we iterate through the items list
             for (i = 0; i < items.length; i++) {
                 totals[items[i].get("mtype")] += items[i].get("wpu") * items[i].get("qty") * items[i].get("fineness") * g2ozt;
             }
