@@ -73,9 +73,9 @@ function removeItem(i) {
             deleteItem(item, 
                     function (item) {
                         currentTableItems.splice(i, 1);
+                        ajaxMutex = false;
                         updateTable();
                         updateLoaded();
-                        ajaxMutex = false;
                         /* Finish removal */
                         hidePopup();
                     },
