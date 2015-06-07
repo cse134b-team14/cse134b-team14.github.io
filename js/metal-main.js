@@ -140,6 +140,7 @@ function updateLoaded() {
                         /* Finish update */
                         hidePopup();
                     }
+                    loadData();
                 },
                 function (items, error) {
                     ajaxMutex = false;
@@ -147,7 +148,6 @@ function updateLoaded() {
                     displayError(error.message);
                 });
     }
-    loadData();
 }
 
 /* Loaders */
