@@ -21,7 +21,8 @@ var combined = [
     "js/crud.js", 
     "js/data.js", 
     "js/helpers.js", 
-    "js/popup.js"
+    "js/popup.js",
+    "js/settings.js",
 ];
 
 gulp.task("default", function() {

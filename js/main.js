@@ -320,10 +320,7 @@ $(document).ready(function() {
     var page = path.split("/").pop();
     
     /* Not logged in */
-    if (!Parse.User.current()) {
-        displayMessage("Invalid Access!", "", true, "logout();");
-        return;
-    }
+    if (!forceLogin()) return;
 
     /* Button setup */
     $('.icon-spinner2').click(function(){
@@ -331,13 +328,7 @@ $(document).ready(function() {
     });
 
     $('.icon-cog').click(function(){
-        setPopupHeader("Settings");
-        setPopupMain(
-                "<input type='button' class='popup-main-button' onclick='logout();' value='Logout'/>" +
-                "<input type='button' class='popup-main-button' onclick='hidePopup();' value='Cancel'/>" 
-                );
-        setPopupSize(400);
-        showPopup();
+        showSettings();
     });
 
     $('tr').click(function(){
